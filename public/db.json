@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Mouse",
+      "description": "Ergonomic wireless mouse with adjustable DPI.",
+      "validity": "2024-12-31",
+      "cost": 19.99
+    },
+    {
+      "id": 2,
+      "name": "Bluetooth Headphones",
+      "description": "Noise-canceling over-ear headphones.",
+      "validity": "2025-01-15",
+      "cost": 49.99
+    },
+    {
+      "id": 3,
+      "name": "Mechanical Keyboard",
+      "description": "RGB backlit mechanical keyboard with blue switches.",
+      "validity": "2024-11-30",
+      "cost": 89.50
+    },
+    {
+      "id": 4,
+      "name": "USB-C Hub",
+      "description": "7-in-1 USB-C hub with HDMI and SD card reader.",
+      "validity": "2025-03-01",
+      "cost": 34.99
+    },
+    {
+      "id": 5,
+      "name": "Gaming Monitor",
+      "description": "27-inch 144Hz Full HD gaming monitor.",
+      "validity": "2024-12-15",
+      "cost": 219.00
+    },
+    {
+      "id": 6,
+      "name": "External SSD",
+      "description": "1TB external SSD with USB 3.1.",
+      "validity": "2025-05-10",
+      "cost": 99.99
+    },
+    {
+      "id": 7,
+      "name": "Smartwatch",
+      "description": "Water-resistant smartwatch with heart rate monitor.",
+      "validity": "2024-12-01",
+      "cost": 149.99
+    },
+    {
+      "id": 8,
+      "name": "Portable Speaker",
+      "description": "Compact Bluetooth speaker with 10-hour battery life.",
+      "validity": "2025-06-30",
+      "cost": 29.99
+    },
+    {
+      "id": 9,
+      "name": "Graphic Tablet",
+      "description": "Drawing tablet with 8192 levels of pressure sensitivity.",
+      "validity": "2025-02-28",
+      "cost": 59.99
+    },
+    {
+      "id": 10,
+      "name": "Fitness Tracker",
+      "description": "Fitness tracker with sleep monitoring and GPS.",
+      "validity": "2025-07-15",
+      "cost": 79.95
+    }
+  ]
+}
