@@ -1,23 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialValue = {
-  products: [
-    {
-      product: {
-        id: 1,
-        name: 'Product 1',
-        price: 10,
-      },
-      quantity: 2,
-      subtotal: 20,
-    }
-  ],
-  total: 20,
-}
+const defaultInitialValues = {
+  products: [],
+  total: 0,
+};
+
+const loadCartFromLocalStorage = () => {
+  const savedCart = localStorage.getItem('shoppingCart');
+  if(!savedCart) {
+    return defaultInitialValues
+  }
+
+  const parsedCart = JSON.parse(savedCart);
+  return {
+    products: parsedCart.products || [],
+    total: parsedCart.total || 0,
+  }
+};
 
 export const shoppingCartSlice = createSlice({
   name: 'shoppingCart',
-  initialState: initialValue,
+  initialState: loadCartFromLocalStorage(),
   reducers: {
     addProduct: (state, action) => {
       const product = action.payload

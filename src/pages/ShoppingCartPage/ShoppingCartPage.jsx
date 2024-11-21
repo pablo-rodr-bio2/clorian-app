@@ -1,7 +1,15 @@
-import { useSelector } from "react-redux"
+import { Button } from "@mui/material"
+import { useDispatch, useSelector } from "react-redux"
+import { clearCart } from "../../features/shopping-cart/shoppingCartSlice"
 
 const ShoppingCartPage = () => {
   const shoppingCart = useSelector(state => state.shoppingCart)
+  const dispatch = useDispatch()
+
+  const handleResetCart = () => {
+    dispatch(clearCart());
+    localStorage.removeItem('shoppingCart');
+  };
   
   if(!shoppingCart.products.length) {
     return <div>Your shopping cart is empty</div>
@@ -17,6 +25,7 @@ const ShoppingCartPage = () => {
           </div>
         ))
       }
+      <Button variant="contained" onClick={handleResetCart}>Clear Cart</Button>
     </>
   )
 }
