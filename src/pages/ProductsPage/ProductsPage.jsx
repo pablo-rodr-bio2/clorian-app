@@ -1,9 +1,9 @@
 import { Box } from "@mui/material"
 import { Link } from "react-router-dom"
-import { useFetch } from "../../hooks/useFetch"
+import { useFetchProducts } from "../../hooks/useFetchProducts"
 
 const ProductsPage = () => {
-  const { loading, error, products } = useFetch('http://localhost:3000/products')
+  const { loading, error, products } = useFetchProducts()
 
   if(loading) {
     return <Box>Loading...</Box>

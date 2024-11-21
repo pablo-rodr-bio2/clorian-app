@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
+import { PRODUCTS_URL } from "../constants/db_urls";
 
-export const useFetch = (url) => {
+export const useFetchProducts = () => {
   const [ loading, setLoading ] = useState(false);
   const [ error, setError ] = useState(null);
   const [ data, setData ] = useState([]);
@@ -10,7 +11,7 @@ export const useFetch = (url) => {
     setError(null);
 
     try {
-      const response = await fetch(url);
+      const response = await fetch(PRODUCTS_URL);
       const data = await response.json();
 
       const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
@@ -23,7 +24,7 @@ export const useFetch = (url) => {
     } finally {
       setLoading(false);
     }
-  }, [url]);
+  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -33,7 +34,7 @@ export const useFetch = (url) => {
     return () => {
       controller.abort();
     }
-  }, [url, handleFetchProducts]);
+  }, [handleFetchProducts]);
 
   return {
     loading,
