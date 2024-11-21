@@ -26,13 +26,13 @@ export const shoppingCartSlice = createSlice({
       const product = action.payload
       const existingProduct = state.products.find(p => p.product.id === product.id)
       if (existingProduct) {
-        existingProduct.quantity++
-        existingProduct.subtotal = existingProduct.quantity * existingProduct.product.price
+        existingProduct.quantity += product.quantity
+        existingProduct.subtotal = existingProduct.quantity * existingProduct.product.cost
       } else {
         state.products.push({
           product: product,
-          quantity: 1,
-          subtotal: product.price,
+          quantity: product.quantity,
+          subtotal: product.cost * product.quantity,
         })
       }
       state.total = state.products.reduce((acc, p) => acc + p.subtotal, 0)

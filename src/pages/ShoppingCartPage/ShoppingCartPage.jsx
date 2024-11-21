@@ -21,7 +21,9 @@ const ShoppingCartPage = () => {
       {
         shoppingCart.products.map(p => (
           <div key={p.product.id}>
-            <p>{p.product.name}</p>
+            <p>Product: {p.product.name}</p>
+            <p>Quantity: {p.quantity}</p>
+            <p>Subtotal: {p.subtotal}</p>
           </div>
         ))
       }
