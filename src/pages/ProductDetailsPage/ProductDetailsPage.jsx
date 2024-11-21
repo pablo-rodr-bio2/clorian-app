@@ -46,6 +46,7 @@ const ProductDetailsPage = () => {
         value={quantity}
         onChange={(e) => setQuantity(e.target.value)}
         label="Quantity"
+        disabled={!isValidProduct}
       >
         {numbers.map(number => (
           <MenuItem key={number} value={number}>{number}</MenuItem>
