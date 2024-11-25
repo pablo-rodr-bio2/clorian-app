@@ -1,13 +1,14 @@
 import { Tab, Tabs } from "@mui/material"
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { useTabsValue } from "../../hooks/useTabsValue"
 
 const Header = () => {
-  const location = useLocation()
+  const value = useTabsValue()
 
   return (
     <header>
       <Tabs
-        value={location.pathname}
+        value={value}
         indicatorColor="primary"
         textColor="primary"
         centered
@@ -31,14 +32,3 @@ const Header = () => {
 }
 
 export default Header
-
-
-    // <header>
-    //   <Link to="/">
-    //     <h3>Products</h3>
-    //   </Link>
-
-    //   <Link to="/shopping-cart">
-    //     <h3>My Shopping Cart</h3>
-    //   </Link>
-    // </header>
