@@ -1,6 +1,6 @@
-import { Box } from "@mui/material"
-import { Link } from "react-router-dom"
+import { Box } from "@mui/material" 
 import { useFetchProducts } from "../../hooks/useFetchProducts"
+import ProductList from "./components/ProductsList/ProductList"
 
 const ProductsPage = () => {
   const { loading, error, products } = useFetchProducts()
@@ -16,15 +16,7 @@ const ProductsPage = () => {
   return (
     <>
       <Box>Products Page</Box>
-      <Box>
-        {products.map(product => (
-          <Box key={product.id}>
-            <Link to={`/product/${product.id}`}>{product.name}</Link>
-            <Box>{product.description}</Box>
-            <Box>{product.cost}</Box>
-          </Box>
-        ))}
-      </Box>
+      <ProductList products={products} />
     </>
   )
 }

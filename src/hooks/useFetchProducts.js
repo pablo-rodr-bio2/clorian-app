@@ -14,9 +14,9 @@ export const useFetchProducts = () => {
       const response = await fetch(PRODUCTS_URL);
       const data = await response.json();
 
-      const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
+      // const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
 
-      setData(sortedData);
+      setData(data);
     } catch (error) {
       if (error.name !== "AbortError") {
         setError(error);
