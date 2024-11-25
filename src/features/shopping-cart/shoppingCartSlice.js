@@ -26,7 +26,12 @@ export const shoppingCartSlice = createSlice({
       const product = action.payload
       const existingProduct = state.products.find(p => p.product.id === product.id)
       if (existingProduct) {
-        existingProduct.quantity += product.quantity
+        const newQuantity = existingProduct.quantity + product.quantity;
+        if (newQuantity > 10) {
+         existingProduct.quantity = 10;
+        } else {
+         existingProduct.quantity = newQuantity;
+        }
         existingProduct.subtotal = existingProduct.quantity * existingProduct.product.cost
       } else {
         state.products.push({
