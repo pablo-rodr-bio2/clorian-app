@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import CssBaseline from '@mui/material/CssBaseline'
 
 import ShoppingCartPage from './pages/ShoppingCartPage/ShoppingCartPage'
 import ProductsPage from './pages/ProductsPage/ProductsPage'
@@ -35,6 +36,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <CssBaseline />
+
     <Provider store={store}>
       <RouterProvider router={router}/>
     </Provider>
