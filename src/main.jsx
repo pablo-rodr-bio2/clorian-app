@@ -1,38 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import CssBaseline from '@mui/material/CssBaseline'
-
-import ShoppingCartPage from './pages/ShoppingCartPage/ShoppingCartPage'
-import ProductsPage from './pages/ProductsPage/ProductsPage'
-import ProductDetailsPage from './pages/ProductDetailsPage/ProductDetailsPage'
-import ErrorPage from './pages/ErrorPage/ErrorPage'
+import { RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
+import { CssBaseline } from '@mui/material'
+
 import { store } from './store'
-import Layout from './layout/Layout'
+import { router } from './router/router'
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <ProductsPage />,
-      },
-      {
-        path: "product/:productId",
-        element: <ProductDetailsPage />,
-      },
-      {
-        path: "shopping-cart",
-        element: <ShoppingCartPage />,
-      }
-    ]
-  },
-
-])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

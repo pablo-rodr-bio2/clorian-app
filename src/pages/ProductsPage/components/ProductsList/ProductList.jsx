@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import { Box, Button, InputLabel, MenuItem, Select, TextField } from '@mui/material'
+import { Box, Button, Card, CardContent, Grid2, InputLabel, Link, MenuItem, Select, TextField, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const orderProducts = (products, order) => {
   return products.sort((a, b) => a[order].localeCompare(b[order]))
@@ -35,36 +35,52 @@ const ProductList = ({ products }) => {
     setSort(event.target.value)
   }
 
-  
+  if(products.length === 0) {
+    return undefined
+  }
 
   return (
-    <>
-      <Box>
-        <InputLabel id="order-by-label">Order by</InputLabel>
-        <Select
-          value={order}
-          onChange={handleOrder}
-          label="Order by"
-        >
-          <MenuItem value="name">Name</MenuItem>
-          <MenuItem value="description">Description</MenuItem>
-        </Select>
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3}}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2}}>
+        <Box sx={{ display: 'flex', gap: 1, alignItems:'center' }}>
+          <InputLabel id="order-by-label">Order by</InputLabel>
+          <Select
+            value={order}
+            onChange={handleOrder}
+            label="Order by"
+          >
+            <MenuItem value="name">Name</MenuItem>
+            <MenuItem value="description">Description</MenuItem>
+          </Select>
+        </Box>
 
-        <InputLabel id="search">Search</InputLabel>
-        <TextField id="search" variant="outlined" value={sort} onChange={handleSort} />
-        <Button variant="contained" color="primary"  onClick={() => setSort('')}>Reset</Button>
+        <Box sx={{ display: 'flex', gap: 1, alignItems:'center' }}>
+          <InputLabel id="search">Search</InputLabel>
+          <TextField id="search" variant="outlined" value={sort} onChange={handleSort} />
+          <Button variant="contained" color="primary"  onClick={() => setSort('')}>Reset</Button>
+        </Box>
       </Box>
         
-      <Box>
-          {filteredProducts.map(product => (
-            <Box key={product.id}>
-              <Link to={`/product/${product.id}`}>{product.name}</Link>
-              <Box>{product.description}</Box>
-              <Box>{product.cost}</Box>
-            </Box>
-          ))}
-      </Box>
-    </>
+      <Grid2 container spacing={2} columns={{ xs: 4, sm: 8, md: 12}}>        
+        {filteredProducts.map(product => (
+          <Grid2 size={{ xs: 2, sm: 3, md: 3}} key={product.id} display="flex" >
+            <Card variant='elevation' sx={{ width: '100%'}}>
+              <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center'}}>
+                <Link component={NavLink} to={`/product/${product.id}`} underline='none'>
+                  {product.name}
+                </Link>
+                <Typography align='justify'>{product.description}</Typography>
+                <Typography component="div">
+                  <Box sx={{ fontWeight: 'bold'}}>
+                  Price: ${product.cost}
+                  </Box>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid2>
+        ))}
+      </Grid2>
+    </Box>
   )
 }
 
