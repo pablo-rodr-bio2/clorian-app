@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Card, CardContent, Typography } from "@mui/material"
 
 const ProductDetailsInfo = ({ product }) => {

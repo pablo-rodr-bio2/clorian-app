@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Button, Grid2 } from "@mui/material"
 import ProductDetailsInfo from "../ProductDetailsInfo/ProductDetailsInfo"
 import ProductDetailsSelectQuantity from "../ProductDetailsSelectQuantity/ProductDetailsSelectQuantity"

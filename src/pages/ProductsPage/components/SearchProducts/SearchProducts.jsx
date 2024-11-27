@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Button, InputLabel, TextField } from "@mui/material"
 
 const SearchProducts = ({ sort, onChange, onReset}) => {

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Button, Typography } from "@mui/material"
 import { useDispatch } from "react-redux";
 import { clearCart } from "../../../../features/shopping-cart/shoppingCartSlice";

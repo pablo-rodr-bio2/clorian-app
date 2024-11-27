@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Card, CardContent, Link, Typography } from "@mui/material"
 import { NavLink } from "react-router-dom"
 

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, InputLabel, MenuItem, Select } from "@mui/material"
 import { ITEM_QUANTITIES } from "../../../../constants/db_urls"
 

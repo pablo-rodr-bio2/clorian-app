@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, InputLabel, MenuItem, Select } from "@mui/material"
 
 const SelectOrderProducts = ({ order, onChange}) => {

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Grid2 } from '@mui/material'
 import { useEffect, useState } from 'react'
 
