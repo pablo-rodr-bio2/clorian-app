@@ -1,0 +1,19 @@
+{
+  "productsTitle": "PRODUCTS LIST",
+  "orderBy": "Order by",
+  "name": "Name",
+  "description": "Description",
+  "search": "Search",
+  "reset": "RESET",
+  "productDetailsTitle": "PRODUCT DETAILS",
+  "addToCart": "ADD TO CART",
+  "validUntil": "Valid until",
+  "cost": "Cost",
+  "quantity": "Quantity",
+  "products": "PRODUCTS",
+  "yourCart": "YOUR CART",
+  "shoppingCart": "SHOPPING CART",
+  "cartEmpty": "Your shopping cart is empty",
+  "subtotal": "Subtotal",
+  "cartClear": "CLEAR CART"
+}

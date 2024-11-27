@@ -1,8 +1,10 @@
 import { Box, Skeleton, Typography } from "@mui/material" 
 import { useFetchProducts } from "../../hooks/useFetchProducts"
 import ProductList from "./components/ProductsList/ProductList"
+import { useTranslation } from "react-i18next"
 
 const ProductsPage = () => {
+  const { t } = useTranslation()
   const { loading, error, products } = useFetchProducts()
 
   return (
@@ -12,7 +14,7 @@ const ProductsPage = () => {
         align="center" 
         sx={{ mt: 3, mb: 3 }}
       >
-        PRODUCTS
+        {t("productsTitle")}
       </Typography>
      
       {loading && 

@@ -1,0 +1,19 @@
+{
+  "productsTitle": "LISTA DE PRODUCTOS",
+  "orderBy": "Ordenar por",
+  "name": "Nombre",
+  "description": "Descripción",
+  "search": "Buscar",
+  "reset": "REINICIAR",
+  "productDetailsTitle": "DETALLES DEL PRODUCTO",
+  "addToCart": "AÑADIR AL CARRITO",
+  "validUntil": "Válido hasta",
+  "cost": "Coste",
+  "quantity": "Cantidad",
+  "products": "PRODUCTOS",
+  "yourCart": "SU CARRITO",
+  "shoppingCart": "CARRITO DE COMPRA",
+  "cartEmpty": "Su carrito de compra está vacío",
+  "subtotal": "Subtotal",
+  "cartClear": "BORRAR CARRITO"
+}

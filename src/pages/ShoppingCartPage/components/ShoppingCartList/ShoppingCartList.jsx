@@ -1,6 +1,9 @@
 import { Box, Typography } from "@mui/material"
+import { useTranslation } from "react-i18next"
 
 const ShoppingCartList = ({ shoppingCart }) => {
+  const { t }  = useTranslation()
+
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 2}}>
       {shoppingCart.products.map(p => (
@@ -15,8 +18,8 @@ const ShoppingCartList = ({ shoppingCart }) => {
             }}>
             <Typography> {p.product.name}</Typography>
             <Typography> ${p.product.cost}</Typography>
-            <Typography>Quantity: {p.quantity}</Typography>
-            <Typography>Subtotal: ${p.subtotal}</Typography>
+            <Typography>{t("quantity")}: {p.quantity}</Typography>
+            <Typography>{t("subtotal")}: ${p.subtotal}</Typography>
           </Box>
         ))
       }

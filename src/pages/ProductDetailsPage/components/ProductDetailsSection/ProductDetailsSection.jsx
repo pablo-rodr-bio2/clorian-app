@@ -4,9 +4,12 @@ import ProductDetailsSelectQuantity from "../ProductDetailsSelectQuantity/Produc
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../../../features/shopping-cart/shoppingCartSlice";
+import { useTranslation } from "react-i18next";
 
 const ProductDetailsSection = ({ product }) => {
   const [ quantity, setQuantity ] = useState(1);
+
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -43,7 +46,7 @@ const ProductDetailsSection = ({ product }) => {
             onClick={handleAddToCart}
             disabled={!isValidProduct}
           >
-            Add to cart
+            {t("addToCart")}
           </Button>
         </Box>          
       </Grid2>
