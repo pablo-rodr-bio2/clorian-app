@@ -44,16 +44,16 @@ const ProductList = ({ products }) => {
   }
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3}}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2}}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2, flexDirection: { xs: "column", sm: "row"}}}>
         <SelectOrderProducts order={order} onChange={handleOrder} />
         
         <SearchProducts sort={sort} onChange={handleSort} onReset={handleReset} />
       </Box>
         
-      <Grid2 container spacing={2} columns={{ xs: 4, sm: 8, md: 12}}>        
+      <Grid2 container spacing={2} columns={{ xs: 4, sm: 12, md: 12}}>        
         {filteredProducts.map(product => (
-          <Grid2 size={{ xs: 2, sm: 3, md: 3}} key={product.id} display="flex" >
+          <Grid2 size={{ xs: 2, sm: 4, md: 3}} key={product.id} display="flex" >
             <ProductCard product={product} />
           </Grid2>
         ))}

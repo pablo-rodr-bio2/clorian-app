@@ -1,4 +1,4 @@
-import { Box, Button, InputLabel, TextField } from "@mui/material"
+import { Box, Button, TextField } from "@mui/material"
 import { useTranslation } from "react-i18next"
 
 const SearchProducts = ({ sort, onChange, onReset}) => {
@@ -13,9 +13,7 @@ const SearchProducts = ({ sort, onChange, onReset}) => {
   
   return (
     <Box sx={{ display: 'flex', gap: 1, alignItems:'center' }}>
-      <InputLabel id="search">{t("search")}</InputLabel>
-
-      <TextField id="search" variant="outlined" value={sort} onChange={handleSort} />
+      <TextField id="search" variant="outlined" label={t("search")} value={sort} onChange={handleSort} />
 
       <Button variant="contained" color="primary" onClick={handleReset} >{t("reset")}</Button>
     </Box>
