@@ -21,7 +21,7 @@ const Header = () => {
         />
 
         <Tab
-          label="My Shopping Cart"
+          label="Your Cart"
           value="/shopping-cart"
           component={Link}
           to="/shopping-cart"
