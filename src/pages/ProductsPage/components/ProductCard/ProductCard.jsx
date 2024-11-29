@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 
 const ProductCard = ({ product }) => {
   return (
-    <Card variant='elevation' sx={{ width: '100%'}}>
+    <Card variant='elevation' sx={{ width: '100%'}} data-testid="product-card-root">
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center'}}>
         <Link component={NavLink} to={`/product/${product.id}`} underline='none'>
           {product.name}
