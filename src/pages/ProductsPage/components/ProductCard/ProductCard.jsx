@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Link, Typography } from "@mui/material"
+import { Card, CardContent, Link, Typography } from "@mui/material"
 import { NavLink } from "react-router-dom"
 
 const ProductCard = ({ product }) => {
@@ -11,10 +11,8 @@ const ProductCard = ({ product }) => {
 
         <Typography align='justify'>{product.description}</Typography>
 
-        <Typography component="div">
-          <Box sx={{ fontWeight: 'bold'}}>
-            ${product.cost}
-          </Box>
+        <Typography sx={{ fontWeight: 'bold'}}>          
+          ${product.cost}       
         </Typography>
       </CardContent>
     </Card>

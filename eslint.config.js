@@ -36,4 +36,11 @@ export default [
       ],
     },
   },
+  {
+    files: ['**/*.test.jsx', '**/*.spec.jsx'],
+    env: {
+      'vitest/globals': true,
+    },
+    extends: ['plugin:vitest/recommended'],
+  },
 ]
