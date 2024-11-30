@@ -27,7 +27,7 @@ const ProductDetailsSection = ({ product }) => {
   const isValidProduct = product && new Date(product.validity) >= new Date();
 
   return (
-    <Grid2 container spacing={2}>
+    <Grid2 container spacing={2} data-testid='product-details-section-root'>
       <Grid2 size={{ xs: 12, sm: 6}}>
         <ProductDetailsInfo product={product} />
       </Grid2>
