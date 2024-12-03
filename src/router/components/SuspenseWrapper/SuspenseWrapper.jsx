@@ -1,7 +1,8 @@
 import { Suspense } from "react"
+import SkeletonRoot from "../SkeletonRoot/SkeletonRoot"
 
 const SuspenseWrapper = ({ children }) => (
-  <Suspense fallback={<div>Loading...</div>}>
+  <Suspense fallback={<SkeletonRoot />}>
     {children}
   </Suspense>
 )
