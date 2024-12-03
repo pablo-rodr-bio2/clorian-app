@@ -69,6 +69,20 @@
       "description": "Fitness tracker with sleep monitoring and GPS.",
       "validity": "2025-07-15",
       "cost": 79.95
+    },
+    {
+      "id": 11,
+      "name": "Wireless Charger",
+      "description": "Qi-certified wireless charger with fast charging support.",
+      "validity": "2024-08-20",
+      "cost": 14.99
+    },
+    {
+      "id": 12,
+      "name": "Webcam",
+      "description": "1080p webcam with built-in microphone.",
+      "validity": "2024-10-01",
+      "cost": 39.99
     }
   ]
 }
