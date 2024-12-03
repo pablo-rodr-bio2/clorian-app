@@ -1,5 +1,5 @@
 import { Box, Grid2 } from '@mui/material'
-import { useEffect, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import SelectOrderProducts from '../SelectOrderProducts/SelectOrderProducts'
 import SearchProducts from '../SearchProducts/SearchProducts'
@@ -9,29 +9,13 @@ import { orderProducts, sortProducts } from '../../../../utils/sorter-order'
 const ProductList = ({ products }) => {
   const [ order, setOrder ] = useState('name')
   const [ sort, setSort ] = useState('')
-  const [ filteredProducts, setFilteredProducts ] = useState([])
 
-  useEffect(() => {
-    const orderedProducts = orderProducts(products, order)
-    const sortedProducts = sortProducts(orderedProducts, sort)
-    setFilteredProducts(sortedProducts)
-  }, [products, order, sort])
+  const orderedProducts = useMemo(() => orderProducts(products, order), [products, order]);
+  const filteredProducts = useMemo(() => sortProducts(orderedProducts, sort), [orderedProducts, sort]);
 
-  const handleOrder = (value) => {
-    setOrder(value)
-  }
-
-  const handleSort = (value) => {
-    setSort(value)
-  }
-
-  const handleReset = () => {
-    setSort('')
-  }
-
-  if(products.length === 0) {
-    return undefined
-  }
+  const handleOrder = (value) => setOrder(value)
+  const handleSort = (value) => setSort(value)
+  const handleReset = () =>  setSort('')
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, marginBottom: 2 }}>
