@@ -3,8 +3,8 @@ import { PRODUCTS_URL } from "../constants/db_urls";
 
 export const useFetchProducts = () => {
   const [ loading, setLoading ] = useState(false);
-  const [ error, setError ] = useState(null);
-  const [ data, setData ] = useState([]);
+  const [ error, setError ] = useState(undefined);
+  const [ data, setData ] = useState(undefined);
 
   const abortControllerRef = useRef(null)
 
