@@ -31,7 +31,7 @@ const ShoppingCartList = ({ shoppingCart }) => {
 
               <Typography>{t("quantity")}: {p.quantity}</Typography>
               
-              <Typography>{t("subtotal")}: ${p.subtotal}</Typography>
+              <Typography>{t("subtotal")}: ${p.subtotal.toFixed(2)}</Typography>
             </Box>
           </Box>
         ))
