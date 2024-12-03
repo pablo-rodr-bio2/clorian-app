@@ -10,7 +10,7 @@ const LanguageSelector = () => {
 
   return (
     <Select
-      value={i18n.language}
+      value={i18n.languages[1]}
       onChange={handleChange}
     >
       <MenuItem value="en">English</MenuItem>
