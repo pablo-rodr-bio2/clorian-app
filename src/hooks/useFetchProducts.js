@@ -1,48 +1,21 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { PRODUCTS_URL } from "../constants/db_urls";
 
+const fetchProducts = async () => {
+  const response = await fetch(PRODUCTS_URL);
+  return response.json();
+}
+
 export const useFetchProducts = () => {
-  const [ loading, setLoading ] = useState(false);
-  const [ error, setError ] = useState(undefined);
-  const [ data, setData ] = useState(undefined);
-
-  const abortControllerRef = useRef(null)
-
-  const handleFetchProducts = useCallback(async () => {
-    abortControllerRef.current?.abort();
-    abortControllerRef.current = new AbortController();
-
-    setLoading(true);
-    setError(null);
-
-    try {
-      const response = await fetch(PRODUCTS_URL, {
-        signal: abortControllerRef.current?.signal,
-      });
-      const data = await response.json();
-      setData(data);
-    } catch (error) {
-      if (error.name !== "AbortError") {
-        setError(error);
-      }
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    handleFetchProducts();
-
-    return () => {
-      controller.abort();
-    }
-  }, [handleFetchProducts]);
+  const { data, isError, isLoading } = useQuery({
+    queryKey: ["products"],
+    queryFn: fetchProducts,
+    staleTime: Infinity,
+  });
 
   return {
-    loading,
-    error,
     products: data,
+    isError,
+    isLoading,
   }
 }
