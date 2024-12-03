@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { getItem, removeItem } from "../../utils/local-storage";
 
 const defaultInitialValues = {
   products: [],
@@ -6,7 +7,7 @@ const defaultInitialValues = {
 };
 
 const loadCartFromLocalStorage = () => {
-  const savedCart = localStorage.getItem('shoppingCart');
+  const savedCart = getItem('shoppingCart');
   if(!savedCart) {
     return defaultInitialValues
   }
@@ -58,6 +59,7 @@ export const shoppingCartSlice = createSlice({
     clearCart: (state) => {
       state.products = []
       state.total = 0
+      removeItem('shoppingCart');
     },
   },
 })

@@ -1,5 +1,6 @@
 import { configureStore, createListenerMiddleware } from "@reduxjs/toolkit";
 import { addProduct, clearCart, removeProduct, shoppingCartReducer } from "./features/shopping-cart/shoppingCartSlice";
+import { setItem } from "./utils/local-storage";
 
 const listenerMiddleWare = createListenerMiddleware();
 
@@ -10,7 +11,7 @@ listenerMiddleWare.startListening({
     action.type === clearCart.type,
     effect: (_, listenerApi) => {
       const state = listenerApi.getState();
-      localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart));
+      setItem('shoppingCart', JSON.stringify(state.shoppingCart));
     },
 });
 

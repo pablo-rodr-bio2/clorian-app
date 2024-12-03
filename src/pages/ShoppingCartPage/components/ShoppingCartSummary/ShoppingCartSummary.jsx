@@ -9,7 +9,6 @@ const ShoppingCartSummary = ({ shoppingCart }) => {
 
   const handleResetCart = () => {
     dispatch(clearCart());
-    localStorage.removeItem('shoppingCart');
   };
 
   return (
