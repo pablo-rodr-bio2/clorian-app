@@ -1,9 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import ProductsPage from "../pages/ProductsPage/ProductsPage";
-import ProductDetailsPage from "../pages/ProductDetailsPage/ProductDetailsPage";
-import ShoppingCartPage from "../pages/ShoppingCartPage/ShoppingCartPage";
+import { RoutePath, RoutesMapping } from "./config";
+import SuspenseWrapper from "./components/SuspenseWrapper/SuspenseWrapper";
 
 export const router = createBrowserRouter([
   {
@@ -13,15 +12,15 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <ProductsPage />,
+        element: <SuspenseWrapper>{RoutesMapping[RoutePath.ROOT]}</SuspenseWrapper>,
       },
       {
         path: "product/:productId",
-        element: <ProductDetailsPage />,
+        element: <SuspenseWrapper>{RoutesMapping[RoutePath.PRODUCT_DETAILS]}</SuspenseWrapper>,
       },
       {
         path: "shopping-cart",
-        element: <ShoppingCartPage />,
+        element: <SuspenseWrapper>{RoutesMapping[RoutePath.SHOPPING_CART]}</SuspenseWrapper>,
       }
     ]
   },
