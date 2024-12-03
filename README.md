@@ -1,8 +1,11 @@
-# React + Vite
+# Clorian Application -  Test Case
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
+Fork this repo and in your local files run `npm install`
 
-Currently, two official plugins are available:
+## How to use
+Inside the project, run first `json-server --watch public/db.json --port 3000`.
+In another terminal, run `npm run dev` to get the local url to navigate to the app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to test
+Just run `npm test`

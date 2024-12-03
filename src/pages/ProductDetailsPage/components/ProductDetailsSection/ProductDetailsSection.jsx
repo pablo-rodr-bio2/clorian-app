@@ -1,4 +1,4 @@
-import { Box, Button, Grid2 } from "@mui/material"
+import { Alert, Box, Button, Grid2 } from "@mui/material"
 import ProductDetailsInfo from "../ProductDetailsInfo/ProductDetailsInfo"
 import ProductDetailsSelectQuantity from "../ProductDetailsSelectQuantity/ProductDetailsSelectQuantity"
 import { useState } from "react";
@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const ProductDetailsSection = ({ product }) => {
   const [ quantity, setQuantity ] = useState(1);
+  const [ showAlert, setShowAlert ] = useState(false);
 
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const ProductDetailsSection = ({ product }) => {
       dispatch(
         addProduct({...product, quantity})
       )
+
+      setShowAlert(true)
     }
   }
 
@@ -48,6 +51,8 @@ const ProductDetailsSection = ({ product }) => {
           >
             {t("addToCart")}
           </Button>
+
+          {showAlert && <Alert severity="success">Added to your cart</Alert>}
         </Box>          
       </Grid2>
     </Grid2>
