@@ -1,5 +1,5 @@
 import { Box, Grid2 } from '@mui/material'
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useCallback } from 'react'
 
 import SelectOrderProducts from '../SelectOrderProducts/SelectOrderProducts'
 import SearchProducts from '../SearchProducts/SearchProducts'
@@ -13,9 +13,9 @@ const ProductList = ({ products }) => {
   const orderedProducts = useMemo(() => orderProducts(products, order), [products, order]);
   const filteredProducts = useMemo(() => sortProducts(orderedProducts, sort), [orderedProducts, sort]);
 
-  const handleOrder = (value) => setOrder(value)
-  const handleSort = (value) => setSort(value)
-  const handleReset = () =>  setSort('')
+  const handleOrder = useCallback((value) => setOrder(value), []);
+  const handleSort = useCallback((value) => setSort(value), []);
+  const handleReset = useCallback(() =>  setSort(''), []);
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, marginBottom: 2 }}>
